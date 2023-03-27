@@ -1,0 +1,7 @@
+#!/bin/sh
+
+for package in "${@}"; do
+    wget https://github.com/mu-box/${package}/releases/latest/download/${package}-$(apk --print-arch).apk && \
+    apk add ./${package}-$(apk --print-arch).apk && \
+    rm ${package}-$(apk --print-arch).apk
+done

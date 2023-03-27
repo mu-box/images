@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl -f -k https://s3.amazonaws.com/tools.microbox.cloud/hooks/${1}-${2:-stable}.tgz | tar -xz -C /opt/microbox/hooks
+curl -f -k https://s3.amazonaws.com/tools.microbox.cloud/hooks/${1}-${2:-stable}.md5 -o /var/microbox/hooks.md5
